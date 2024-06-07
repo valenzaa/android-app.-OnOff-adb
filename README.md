@@ -1,21 +1,16 @@
 # android-app.-OnOff-adb
-android OnOff adb 
-แอป Android เพื่อปิดหรือเปิด ADB (Android Debug Bridge) mode นั้นไม่สามารถทำได้โดยตรงผ่านแอปปกติที่รันบน Android เนื่องจากการตั้งค่าของ ADB เป็นส่วนหนึ่งของระบบปฏิบัติการและต้องการสิทธิ์ระดับสูง (root) เพื่อทำการเปลี่ยนแปลง
-
-หากอุปกรณ์ของคุณถูก root คุณอาจสามารถเขียนสคริปต์หรือแอปพลิเคชันเพื่อจัดการ ADB mode ได้โดยใช้คำสั่ง su เพื่อเพิ่มสิทธิ์ superuser แต่หากอุปกรณ์ของคุณไม่ได้ root คุณจะไม่สามารถทำได้เนื่องจากข้อจำกัดของระบบ Android ที่ป้องกันการเปลี่ยนแปลงในส่วนนี้เพื่อความปลอดภัย
-
-นี่คือตัวอย่างคร่าว ๆ สำหรับการสร้างแอปที่ใช้สิทธิ์ root เพื่อปิด/เปิด ADB mode:
-ตัวอย่างโค้ด
-
- 
-java:
+### android OnOff adb 
+### แอป Android เพื่อปิดหรือเปิด ADB (Android Debug Bridge) mode นั้นไม่สามารถทำได้โดยตรงผ่านแอปปกติที่รันบน Android เนื่องจากการตั้งค่า### ของ ADB เป็นส่วนหนึ่งของระบบปฏิบัติการและต้องการสิทธิ์ระดับสูง (root) เพื่อทำการเปลี่ยนแปลง
+### หากอุปกรณ์ของคุณถูก root คุณอาจสามารถเขียนสคริปต์หรือแอปพลิเคชันเพื่อจัดการ ADB mode ได้โดยใช้คำสั่ง su เพื่อเพิ่มสิทธิ์ superuser แต่หาก### อุปกรณ์ของคุณไม่ได้ root คุณจะไม่สามารถทำได้เนื่องจากข้อจำกัดของระบบ Android ที่ป้องกันการเปลี่ยนแปลงในส่วนนี้เพื่อความปลอดภัย
+### นี่คือตัวอย่างคร่าว ๆ สำหรับการสร้างแอปที่ใช้สิทธิ์ root เพื่อปิด/เปิด ADB mode:
+### ตัวอย่างโค้ด
+sh:
 import android.os.Bundle;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import java.io.DataOutputStream;
 import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
